@@ -1,0 +1,21 @@
+name: Build and Test
+on:
+  push:
+jobs:
+  build-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install LLVM and Clang
+        uses: KyleMayes/install-llvm-action@v1
+        with:
+          version: "17.0"
+      - name: clang version
+        run: opt --version; clang --version; llvm-config --version
+      - name: Checkout the repository
+        uses: actions/checkout@v3.5.3
+      - name: Configure the project
+        uses: threeal/cmake-action@v1.3.0
+        with:
+          generator: Ninja
+          c-compiler: clang
+          cxx-compiler: clang++
