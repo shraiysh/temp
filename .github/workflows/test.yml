@@ -19,6 +19,6 @@ jobs:
         uses: threeal/cmake-action@v1.3.0
         with:
           generator: Ninja
-          c-compiler: clang
-          cxx-compiler: clang++
+          c-compiler: clang-17
+          cxx-compiler: clang++-17
           options: CMAKE_MODULE_PATH=/home/runner/work/temp/temp/llvm/
