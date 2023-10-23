@@ -11,6 +11,8 @@ jobs:
           version: "17.0"
       - name: clang version
         run: opt --version; clang --version; llvm-config --version
+      - name: Find LLVMConfig.cmake
+        run: (cd `llvm-config --prefix` && find $PWD -name "LLVMConfig.cmake")
       - name: Checkout the repository
         uses: actions/checkout@v3.5.3
       - name: Configure the project
@@ -19,3 +21,4 @@ jobs:
           generator: Ninja
           c-compiler: clang
           cxx-compiler: clang++
+          options: CMAKE_MODULE_PATH=/home/runner/work/temp/temp/llvm/lib
