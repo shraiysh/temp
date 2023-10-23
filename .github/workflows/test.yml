@@ -21,4 +21,4 @@ jobs:
           generator: Ninja
           c-compiler: clang
           cxx-compiler: clang++
-          options: CMAKE_MODULE_PATH=/home/runner/work/temp/temp/llvm/lib
+          options: CMAKE_MODULE_PATH=/home/runner/work/temp/temp/llvm/lib/cmake/llvm/
